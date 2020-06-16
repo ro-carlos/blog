@@ -1,5 +1,5 @@
 function changeView(element) {
-  const width = document.body.clientWidth;
+  const width = window.innerWidth;
   if (element.id === "gallery") {
     const images = document.getElementsByClassName("cards_item");
     for (let image of images) {
