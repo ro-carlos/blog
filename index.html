@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="css/panel.css" />
     <link rel="stylesheet" href="css/card.css" />
     <link rel="stylesheet" href="css/footer.css" />
+    <script type="text/javascript" src="js/navbar.js"></script>
     <script type="text/javascript" src="js/panel.js"></script>
     
     <style> 
@@ -55,7 +56,7 @@
 
   <body>
     <!-- Navigation menu -->
-    <div class="nav">
+    <div id="nav-menu" class="nav">
       <input type="checkbox" id="nav-check" />
       <div class="nav-header">
         <div class="nav-title">
@@ -63,14 +64,14 @@
         </div>
       </div>
       <div class="nav-btn">
-        <label for="nav-check">
+        <label id="nav-check" for="nav-check" onclick="onClickNavButton(this)">
           <span></span>
           <span></span>
           <span></span>
         </label>
       </div>
 
-      <div class="nav-links">
+      <div id="nav-links" class="nav-links">
         <a class="active" href="https://www.google.com" target="_blank">All</a>
         <a href="https://google.com" target="_blank">Branding</a>
         <a href="https://google.com" target="_blank">Web</a>
