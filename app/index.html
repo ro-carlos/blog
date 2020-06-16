@@ -9,8 +9,8 @@
     <link rel="stylesheet" href="css/panel.css" />
     <link rel="stylesheet" href="css/card.css" />
     <link rel="stylesheet" href="css/footer.css" />
-    <script type="text/javascript" src="js/navbar.js"></script>
     <script type="text/javascript" src="js/panel.js"></script>
+    <script type="text/javascript" src="js/navbar.js"></script>
     <script type="text/javascript" src="js/cards.js"></script>
 
     
@@ -79,7 +79,7 @@
         <a onclick="createCustomCards('Web')">Web</a>
         <a onclick="createCustomCards('Photography')">Photography</a>
         <a onclick="createCustomCards('App')">App</a>
-        <input type="text" name="search" >
+        <input id="searchbar" type="text" name="search" oninput="searchbarHandler(this)">
       </div>
     </div>
 

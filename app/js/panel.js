@@ -38,6 +38,27 @@ function createCustomCards(category) {
   }
 }
 
+function searchbarHandler(element) {
+  removeChilds("cards_div");
+
+  const value = element.value.toLowerCase();
+  const cards_div = document.getElementById("cards_div");
+
+  for (const image of images) {
+    if (
+      image.title.toLowerCase().includes(value) ||
+      image.description.toLowerCase().includes(value) ||
+      image.category.toLowerCase().includes(value)
+    ) {
+      const cards_item = createCardItem(image);
+      cards_div.appendChild(cards_item);
+    } else if (value === null || value === undefined || value === "") {
+      const cards_item = createCardItem(image);
+      cards_div.appendChild(cards_item);
+    }
+  }
+}
+
 function removeChilds(tag) {
   const cards_div = document.getElementById(tag);
   if (cards_div) {

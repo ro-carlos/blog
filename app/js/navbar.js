@@ -1,7 +1,7 @@
 paddingBottom = 0;
 checked = false;
 
-function onClickNavButton(element) {
+function onClickNavButton() {
   checked = !checked;
   const nav = document.getElementById("nav-menu");
   const navLinks = document.getElementById("nav-links");
