@@ -74,11 +74,11 @@
       </div>
 
       <div id="nav-links" class="nav-links">
-        <a class="active" href="https://www.google.com" target="_blank">All</a>
-        <a href="https://google.com" target="_blank">Branding</a>
-        <a href="https://google.com" target="_blank">Web</a>
-        <a href="https://www.google.com" target="_blank">Photography</a>
-        <a href="https://www.google.com" target="_blank">App</a>
+        <a class="active" onclick="createAllCards()">All</a>
+        <a onclick="createCustomCards('Branding')">Branding</a>
+        <a onclick="createCustomCards('Web')">Web</a>
+        <a onclick="createCustomCards('Photography')">Photography</a>
+        <a onclick="createCustomCards('App')">App</a>
         <input type="text" name="search" >
       </div>
     </div>
@@ -119,48 +119,35 @@
 
           <!-- Navbar -->
           <div class="panel_nav options2">
-            <div class="panel_nav-links">
+            <!-- <div class="panel_nav-links">
               <a class="active" href="https://www.google.com" target="_blank">All</a>
               <a href="https://google.com" target="_blank">Branding</a>
               <a href="https://google.com" target="_blank">Web</a>
               <a href="https://www.google.com" target="_blank">Photography</a>
               <a href="https://www.google.com" target="_blank">App</a>
+            </div> -->
+            <div class="panel_nav-links">
+              <a class="active" onclick="createAllCards()">All</a>
+              <a onclick="createCustomCards('Branding')">Branding</a>
+              <a onclick="createCustomCards('Web')">Web</a>
+              <a onclick="createCustomCards('Photography')">Photography</a>
+              <a onclick="createCustomCards('App')">App</a>
             </div>
           </div>
 
           <!-- Images-->
-        <ul class="cards">
-          <li class="cards_item">
-            <div class="card">
-              <div class="card_image"><img src="https://picsum.photos/500/300/?image=10"></div>
-              <div class="card_content">
-                <h2 class="card_title">Card Grid Layout</h2>
-                <p class="card_text">Demo of pixel perfect pure CSS simple responsive card grid layout</p>
-                <button class="btn card_btn">Read More</button>
+          <ul id="cards_div" class="cards">
+            <!-- <li class="cards_item">
+              <div class="card">
+                <div class="card_image"><img src="https://picsum.photos/500/300/?image=10"></div>
+                <div class="card_content">
+                  <h2 class="card_title">Card Grid Layout</h2>
+                  <p class="card_text">Demo of pixel perfect pure CSS simple responsive card grid layout</p>
+                  <button class="btn card_btn">Read More</button>
+                </div>
               </div>
-            </div>
-          </li>
-          <li class="cards_item">
-            <div class="card">
-              <div class="card_image"><img src="https://picsum.photos/500/300/?image=5"></div>
-              <div class="card_content">
-                <h2 class="card_title">Card Grid Layout</h2>
-                <p class="card_text">Demo of pixel perfect pure CSS simple responsive card grid layout</p>
-                <button class="btn card_btn">Read More</button>
-              </div>
-            </div>
-          </li>
-          <li class="cards_item">
-            <div class="card">
-              <div class="card_image"><img src="https://picsum.photos/500/300/?image=11"></div>
-              <div class="card_content">
-                <h2 class="card_title">Card Grid Layout</h2>
-                <p class="card_text">Demo of pixel perfect pure CSS simple responsive card grid layout</p>
-                <button class="btn card_btn">Read More</button>
-              </div>
-            </div>
-          </li>
-        </ul>
+            </li> -->
+          </ul>
 
         <div class="panel_btn_container ">
           <button class="panel_btn_more ">Show me more</button>

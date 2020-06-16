@@ -40,11 +40,19 @@ body {
   padding: 13px 10px 13px 10px;
   text-decoration: none;
   color: gray;
+
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently supported by Chrome and Opera */
 }
 
 .nav > .nav-links > a:hover {
   background-color: #ed5370;
   color: white;
+  cursor: pointer;
 }
 
 .nav > #nav-check {
@@ -68,6 +76,7 @@ body {
   .nav #nav-check:checked ~ .nav-btn > label {
     background-color: #ed5370;
     color: white;
+    cursor: pointer;
   }
   .nav > .nav-btn > label > span {
     display: block;

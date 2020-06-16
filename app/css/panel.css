@@ -80,4 +80,23 @@
 
 .panel_btn_more:hover {
   background-color: rgb(231, 129, 148);
+  cursor: pointer;
+}
+
+.panel_nav > .panel_nav-links > a {
+  color: white;
+  cursor: pointer;
+
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently supported by Chrome and Opera */
+}
+
+.panel_nav > .panel_nav-links > a:hover {
+  background-color: #ed5370;
+  color: white;
+  cursor: pointer;
 }
