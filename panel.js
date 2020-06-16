@@ -4,7 +4,7 @@ function changeView(element) {
     const images = document.getElementsByClassName("cards_item");
     for (let image of images) {
       if (width < 640) {
-        image.style.width = "75%";
+        image.style.width = "100%";
       } else if (width >= 640 && width < 896) {
         image.style.width = "50%";
       } else if (width > 896) {
@@ -14,7 +14,7 @@ function changeView(element) {
   } else if (element.id === "list") {
     const images = document.getElementsByClassName("cards_item");
     for (let image of images) {
-      image.style.width = "75%";
+      image.style.width = "100%";
     }
   }
 }
