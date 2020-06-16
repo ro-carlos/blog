@@ -1,0 +1,40 @@
+.social-footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-top: 30px !important;
+  padding: 1rem;
+}
+
+.social-footer .social-footer-icons .fa {
+  font-size: 1.3rem;
+  color: #9c9b9b;
+  padding: 5px;
+}
+
+.social-footer-icons {
+  display: flex;
+  justify-content: center;
+}
+
+.social-footer .social-footer-icons .fa:hover {
+  color: #4a4a4a;
+  transition: color 0.3s ease-in;
+}
+
+.made_by {
+  font-weight: 400;
+  font-size: 13px;
+  text-align: center;
+  color: gray;
+  padding-left: 2px;
+}
+
+.company {
+  color: #ef748b;
+}
+
+.social-footer-made_by {
+  display: flex;
+  justify-content: center;
+}

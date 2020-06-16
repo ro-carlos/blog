@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sneak</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
+    <link rel="stylesheet" href="navbar.css" />
+    <link rel="stylesheet" href="panel.css" />
+    <link rel="stylesheet" href="card.css" />
+    <link rel="stylesheet" href="footer.css" />
+
+    <style> 
+      input[type=text] {
+        width: 100px;
+        box-sizing: border-box;
+        border: 2px solid #ccc;
+        border-radius: 4px;
+        font-size: 16px;
+        background-color: white;
+        background-image: url('assets/icons/search.png');
+        background-position: 10px 10px; 
+        background-repeat: no-repeat;
+        padding: 12px 20px 12px 40px;
+        -webkit-transition: width 1.4s ease-in-out;
+        transition: width 0.4s ease-in-out;
+        border: 0;
+        color:gray
+      }
+      
+      input[type=text]:focus {
+        width: max(226px, 100% - 840px);
+        border: 0;
+        color:gray;
+        animation-delay: -2s;
+        /* outline: none; */
+        outline-color: #ef748b;
+        /* outline-color: gray; */
+      }
+
+      button:focus {
+        border: 0;
+        outline: none;
+      }
+
+      .active{
+        background: #ed5370;
+        color:white !important;
+      }
+
+      </style>
+
+  </head>
+
+  <body>
+    <!-- Navigation menu -->
+    <div class="nav">
+      <input type="checkbox" id="nav-check" />
+      <div class="nav-header">
+        <div class="nav-title">
+          <img src="./assets/icons/sneak.png">
+        </div>
+      </div>
+      <div class="nav-btn">
+        <label for="nav-check">
+          <span></span>
+          <span></span>
+          <span></span>
+        </label>
+      </div>
+
+      <div class="nav-links">
+        <a class="active" href="https://www.google.com" target="_blank">All</a>
+        <a href="https://google.com" target="_blank">Branding</a>
+        <a href="https://google.com" target="_blank">Web</a>
+        <a href="https://www.google.com" target="_blank">Photography</a>
+        <a href="https://www.google.com" target="_blank">App</a>
+        <input type="text" name="search" >
+      </div>
+    </div>
+
+
+
+    <!-- Panel -->
+    <div class="panel">
+        <li class="panel_cards_item">
+            <div class="panel_card">
+              <div class="panel_card_content">
+                <h2 class="panel_card_title">EXPLORE BEYOND HORIZON</h2>
+                <p class="panel_card_text">Demo of pixel perfect pure CSS simple responsive card grid layout</p>
+                <div class="panel_btn_container ">
+                  <button class="panel_btn">VIEW OUR WORK</button>
+                </div>
+              </div>
+            </div>
+          </li>
+    </div>
+
+    <!-- Cards -->
+    <div class="main">
+        <!-- Options-->
+        <div class="options">
+            <div class="card_image"> 
+              <button class="btn card_btn">
+                <img src="./assets/icons/gallery.png">
+              </button>
+            </div>
+
+            <div class="card_image"> 
+              <button class="btn card_btn">
+                <img src="./assets/icons/list.png">
+              </button>
+            </div>        
+          </div>
+
+          <!-- Navbar -->
+          <div class="nav options2">
+            <div class="nav-links">
+              <a class="active" href="https://www.google.com" target="_blank">All</a>
+              <a href="https://google.com" target="_blank">Branding</a>
+              <a href="https://google.com" target="_blank">Web</a>
+              <a href="https://www.google.com" target="_blank">Photography</a>
+              <a href="https://www.google.com" target="_blank">App</a>
+            </div>
+          </div>
+
+          <!-- Images-->
+        <ul class="cards">
+          <li class="cards_item">
+            <div class="card">
+              <div class="card_image"><img src="https://picsum.photos/500/300/?image=10"></div>
+              <div class="card_content">
+                <h2 class="card_title">Card Grid Layout</h2>
+                <p class="card_text">Demo of pixel perfect pure CSS simple responsive card grid layout</p>
+                <button class="btn card_btn">Read More</button>
+              </div>
+            </div>
+          </li>
+          <li class="cards_item">
+            <div class="card">
+              <div class="card_image"><img src="https://picsum.photos/500/300/?image=5"></div>
+              <div class="card_content">
+                <h2 class="card_title">Card Grid Layout</h2>
+                <p class="card_text">Demo of pixel perfect pure CSS simple responsive card grid layout</p>
+                <button class="btn card_btn">Read More</button>
+              </div>
+            </div>
+          </li>
+          <li class="cards_item">
+            <div class="card">
+              <div class="card_image"><img src="https://picsum.photos/500/300/?image=11"></div>
+              <div class="card_content">
+                <h2 class="card_title">Card Grid Layout</h2>
+                <p class="card_text">Demo of pixel perfect pure CSS simple responsive card grid layout</p>
+                <button class="btn card_btn">Read More</button>
+              </div>
+            </div>
+          </li>
+        </ul>
+
+        <div class="panel_btn_container ">
+          <button class="panel_btn_more ">Show me more</button>
+        </div>
+
+      </div>
+      
+    </div>
+
+  </body>
+
+  <!-- Footer -->
+  <footer class="social-footer">
+    <div class="social-footer-made_by">
+      <h3 class="made_by">© 2016 - </h3>
+      <h3 class="made_by company"> Sneak </h3>
+      <h3 class="made_by"> All right Reserved</h3>
+    </div>
+
+    <div class="social-footer-icons">
+      <a href="https://www.facebook.com/"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+      <a href="https://www.instagram.com/?hl=en"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+      <a href="https://www.pinterest.com/"><i class="fa fa-pinterest-p" aria-hidden="true"></i></a>
+      <a href="https://twitter.com/?lang=en"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+    </div>
+  </footer>
+  
+  
+</html>
