@@ -9,7 +9,8 @@
     <link rel="stylesheet" href="panel.css" />
     <link rel="stylesheet" href="card.css" />
     <link rel="stylesheet" href="footer.css" />
-
+    <script type="text/javascript" src="panel.js"></script>
+    
     <style> 
       input[type=text] {
         width: 100px;
@@ -101,13 +102,13 @@
         <!-- Options-->
         <div class="options">
             <div class="card_image"> 
-              <button class="btn card_btn">
+              <button id="gallery" onclick="changeView(this)" class="btn card_btn">
                 <img src="./assets/icons/gallery.png">
               </button>
             </div>
 
             <div class="card_image"> 
-              <button class="btn card_btn">
+              <button id="list" onclick="changeView(this)" class="btn card_btn">
                 <img src="./assets/icons/list.png">
               </button>
             </div>        
