@@ -35,7 +35,7 @@ body {
 .nav > .nav-links {
   display: inline;
   float: right;
-  font-size: 18px;
+  font-size: 16px;
 }
 
 .nav > .nav-links > a {
@@ -62,7 +62,7 @@ body {
   display: none;
 }
 
-@media (max-width: 840px) {
+@media (max-width: 850px) {
   .nav > .nav-btn {
     display: inline-block;
     position: absolute;
