@@ -19,6 +19,7 @@ function loadAllImages() {
     .then((data) => {
       images = data;
       createAllCards();
+      applyStyles();
     });
 }
 
@@ -33,9 +34,10 @@ function createAllCards() {
   displayedImages = 0;
   totalImages = images.length;
 
+  let cards_item;
   while (displayedImages < imagesPerPage) {
     const image = images[displayedImages];
-    const cards_item = createCardItem(image);
+    cards_item = createCardItem(image);
 
     cards_div.appendChild(cards_item);
 
@@ -196,12 +198,37 @@ function removeChilds(tag) {
   }
 }
 
+function applyStyles() {
+  const cards_div = document.getElementById("cards_div");
+  if (cards_div) {
+    let i = 1;
+    const firstChild = cards_div.children[0];
+    setTimeout(() => {
+      while (i < cards_div.children.length) {
+        const child = cards_div.children[i];
+        child.style.width = firstChild.clientWidth + "px";
+        child.style.height = firstChild.clientHeight + "px";
+        i += 1;
+      }
+    }, 1000);
+  }
+}
+
 function createCardItem(image) {
   const cards_item = document.createElement("li");
   cards_item.className = "cards_item";
 
   const card = createCard(image);
   cards_item.appendChild(card);
+
+  const cards_div = document.getElementById("cards_div");
+  const firstChild = cards_div.children[0];
+  if (firstChild) {
+    setTimeout(() => {
+      cards_item.style.width = firstChild.clientWidth + "px";
+      cards_item.style.height = firstChild.clientHeight + "px";
+    }, 10);
+  }
 
   return cards_item;
 }

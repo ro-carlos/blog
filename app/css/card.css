@@ -48,12 +48,14 @@ img {
   margin: 0;
   padding: 0;
   justify-content: center;
+  align-items: center;
 }
 
 .cards_item {
   display: flex;
   justify-content: center;
   padding: 1rem;
+  min-width: 33.3333%;
 }
 
 @media (min-width: 640px) {
