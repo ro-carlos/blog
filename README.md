@@ -12,6 +12,10 @@
 4. Open http://localhost:80
 
 
+# Steps to start application (Method 3)
+1. Paste project inside web server
+2. Open browser to visualize page
+
 # Notes
 
 # Stop docker container
