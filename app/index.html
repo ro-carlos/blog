@@ -74,7 +74,7 @@
       </div>
 
       <div id="nav-links" class="nav-links">
-        <a class="active" onclick="createAllCards()">All</a>
+        <a class="active" onclick="searchbarHandler('')">All</a>
         <a onclick="createCustomCards('Branding')">Branding</a>
         <a onclick="createCustomCards('Web')">Web</a>
         <a onclick="createCustomCards('Photography')">Photography</a>
@@ -119,15 +119,8 @@
 
           <!-- Navbar -->
           <div class="panel_nav options2">
-            <!-- <div class="panel_nav-links">
-              <a class="active" href="https://www.google.com" target="_blank">All</a>
-              <a href="https://google.com" target="_blank">Branding</a>
-              <a href="https://google.com" target="_blank">Web</a>
-              <a href="https://www.google.com" target="_blank">Photography</a>
-              <a href="https://www.google.com" target="_blank">App</a>
-            </div> -->
             <div class="panel_nav-links">
-              <a class="active" onclick="createAllCards()">All</a>
+              <a class="active" onclick="searchbarHandler('')">All</a>
               <a onclick="createCustomCards('Branding')">Branding</a>
               <a onclick="createCustomCards('Web')">Web</a>
               <a onclick="createCustomCards('Photography')">Photography</a>
@@ -150,7 +143,7 @@
           </ul>
 
         <div class="panel_btn_container ">
-          <button class="panel_btn_more ">Show me more</button>
+          <button id="showMore" class="panel_btn_more" onclick="displayMoreImages()">Show me more</button>
         </div>
 
       </div>

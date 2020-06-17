@@ -46,7 +46,7 @@
 }
 
 .panel_btn_container {
-  display: flex;
+  display: flex !important;
   justify-content: center;
 }
 

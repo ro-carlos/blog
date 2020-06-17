@@ -1,6 +1,13 @@
 "use strict";
 
 let images;
+let categories = [];
+let lastIndex = 0;
+let pageSize = 5;
+let imagesPerPage = pageSize;
+let displayedImages = 0;
+let totalImages = 0;
+
 loadAllImages();
 
 function loadAllImages() {
@@ -12,50 +19,169 @@ function loadAllImages() {
     .then((data) => {
       images = data;
       createAllCards();
-      // createCustomCards("Branding");
     });
 }
 
 function createAllCards() {
+  categories = [-1];
+  lastIndex = 0;
+  imagesPerPage = pageSize;
+  displayedImages = 0;
   removeChilds("cards_div");
   const cards_div = document.getElementById("cards_div");
 
-  for (const image of images) {
+  displayedImages = 0;
+  totalImages = images.length;
+
+  while (displayedImages < imagesPerPage) {
+    const image = images[displayedImages];
     const cards_item = createCardItem(image);
+
     cards_div.appendChild(cards_item);
+
+    displayedImages += 1;
   }
+  lastIndex = displayedImages;
+  updateShowMoreButton();
 }
 
 function createCustomCards(category) {
+  categories = [category];
+  lastIndex = 0;
+  imagesPerPage = pageSize;
+  displayedImages = 0;
+  totalImages = 0;
+
   removeChilds("cards_div");
   const cards_div = document.getElementById("cards_div");
 
+  // count the max images per category
   for (const image of images) {
+    if (image.category === category) {
+      totalImages += 1;
+    }
+  }
+
+  // create images and update pagination
+  let i = 0;
+  while (displayedImages < imagesPerPage && i < images.length) {
+    const image = images[i];
+
     if (image.category === category) {
       const cards_item = createCardItem(image);
       cards_div.appendChild(cards_item);
+      displayedImages += 1;
     }
+    i += 1;
   }
+
+  lastIndex = i;
+  updateShowMoreButton();
 }
 
 function searchbarHandler(element) {
+  categories = [];
+  lastIndex = 0;
+  imagesPerPage = pageSize;
+  displayedImages = 0;
+  totalImages = 0;
   removeChilds("cards_div");
 
-  const value = element.value.toLowerCase();
+  const value = element.value ? element.value.toLowerCase() : null;
   const cards_div = document.getElementById("cards_div");
 
+  // count the max images per categories
   for (const image of images) {
     if (
       image.title.toLowerCase().includes(value) ||
       image.description.toLowerCase().includes(value) ||
-      image.category.toLowerCase().includes(value)
+      image.category.toLowerCase().includes(value) ||
+      value === null ||
+      value === undefined ||
+      value === ""
+    ) {
+      totalImages += 1;
+    }
+  }
+
+  // create images
+  let i = 0;
+  while (displayedImages < imagesPerPage && i < images.length) {
+    const image = images[i];
+    if (
+      image.title.toLowerCase().includes(value) ||
+      image.description.toLowerCase().includes(value) ||
+      image.category.toLowerCase().includes(value) ||
+      value === null ||
+      value === undefined ||
+      value === ""
     ) {
       const cards_item = createCardItem(image);
       cards_div.appendChild(cards_item);
-    } else if (value === null || value === undefined || value === "") {
+      displayedImages += 1;
+    }
+
+    i += 1;
+  }
+
+  lastIndex = i;
+  updateShowMoreButton();
+}
+
+function displayMoreImages() {
+  let i = lastIndex;
+  imagesPerPage += pageSize;
+
+  const element = document.getElementById("searchbar");
+  const value = element.value ? element.value.toLowerCase() : null;
+
+  while (displayedImages < imagesPerPage && i < images.length) {
+    const image = images[i];
+
+    // Display all
+    if (categories.length === 1 && categories[0] === -1) {
       const cards_item = createCardItem(image);
       cards_div.appendChild(cards_item);
+      displayedImages += 1;
     }
+    // Display only if matches specific category
+    else if (categories.length === 1 && categories[0] !== -1) {
+      if (image.category === categories[0]) {
+        const cards_item = createCardItem(image);
+        cards_div.appendChild(cards_item);
+        displayedImages += 1;
+      }
+    }
+    // Display if matches any category
+    else if (categories.length === 0) {
+      if (
+        image.title.toLowerCase().includes(value) ||
+        image.description.toLowerCase().includes(value) ||
+        image.category.toLowerCase().includes(value) ||
+        value === null ||
+        value === undefined ||
+        value === ""
+      ) {
+        const cards_item = createCardItem(image);
+        cards_div.appendChild(cards_item);
+        displayedImages += 1;
+      }
+    }
+
+    i += 1;
+  }
+  lastIndex = i;
+  updateShowMoreButton();
+}
+
+function updateShowMoreButton() {
+  // console.log("displayed images: " + displayedImages);
+  // console.log("total images: " + totalImages);
+
+  if (displayedImages < totalImages) {
+    document.getElementById("showMore").style.display = "flex";
+  } else {
+    document.getElementById("showMore").style.display = "none";
   }
 }
 
