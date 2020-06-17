@@ -67,6 +67,7 @@
 }
 
 .panel_btn_more {
+  display: none;
   background: #ed5370;
   color: white;
   padding: 0.8rem;
